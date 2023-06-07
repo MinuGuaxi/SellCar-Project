@@ -1,71 +1,85 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
-import 'flutter_flow/flutter_flow_theme.dart';
-import 'flutter_flow/flutter_flow_util.dart';
-import 'flutter_flow/internationalization.dart';
-import 'flutter_flow/nav/nav.dart';
-import 'index.dart';
+void main() => runApp(MyApp());
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  usePathUrlStrategy();
+class MyApp extends StatelessWidget {
 
-  await FlutterFlowTheme.initialize();
-
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  // This widget is the root of your application.
-  @override
-  State<MyApp> createState() => _MyAppState();
-
-  static _MyAppState of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>()!;
-}
-
-class _MyAppState extends State<MyApp> {
-  Locale? _locale;
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
-
-  late AppStateNotifier _appStateNotifier;
-  late GoRouter _router;
-
-  @override
-  void initState() {
-    super.initState();
-    _appStateNotifier = AppStateNotifier.instance;
-    _router = createRouter(_appStateNotifier);
-  }
-
-  void setLocale(String language) {
-    setState(() => _locale = createLocale(language));
-  }
-
-  void setThemeMode(ThemeMode mode) => setState(() {
-        _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
-      });
-
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Felipe',
-      localizationsDelegates: [
-        FFLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      locale: _locale,
-      supportedLocales: const [Locale('en', '')],
-      theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      themeMode: _themeMode,
-      routerConfig: _router,
+    return MaterialApp(
+      title: 'Flutter',
+      home: MyHomePage(),
     );
   }
+}
+
+class MyHomePage extends StatefulWidget {
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+void _incrementCounter() {
+  setState(() {
+    _counter++;
+  });
+}
+
+@override
+ Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      leading: IconButton(
+      icon: Icon(Icons.menu),
+        tooltip: 'Menu de navegação',
+      onPressed: null,
+      ),
+      title: Text('Sellcar'),
+      titleTextStyle: TextStyle(color: Colors.black),
+      backgroundColor: Colors.yellowAccent,
+    ),
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('Vezes que o botão foi apertado',),
+          Text('$_counter', style: Theme.of(context).textTheme.displaySmall,),
+        ],
+      ),
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: _incrementCounter,
+      child: Icon(Icons.add),
+      backgroundColor: Colors.green,
+    ),
+    bottomNavigationBar: BottomAppBar(
+      color: Colors.yellowAccent,
+      child: Container(
+        height: 100,
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Row(
+            children: <Widget>[
+              IconButton(
+                  icon: Icon(Icons.add_box, color: Colors.black),
+                  onPressed: (){
+                    alert('Adicionei');
+                  }
+              ),
+              IconButton(
+                  icon: Icon(Icons.add_a_photo, color: Colors.black),
+                onPressed: () {
+                    alert('Add a foto');
+                }
+              )
+            ],
+          ),
+        )
+      ),
+    ),
+  );
+ }
+}
+void alert(String message) {
+  print(message);
 }

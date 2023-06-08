@@ -101,7 +101,7 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                                         0.0, 10.0, 0.0, 0.0),
                                     child: SwitchListTile.adaptive(
                                       value: _model.switchListTileValue1 ??=
-                                          true,
+                                          false,
                                       onChanged: (newValue) async {
                                         setState(() => _model
                                             .switchListTileValue1 = newValue!);
@@ -144,7 +144,8 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                               children: [
                                 Expanded(
                                   child: SwitchListTile.adaptive(
-                                    value: _model.switchListTileValue2 ??= true,
+                                    value: _model.switchListTileValue2 ??=
+                                        false,
                                     onChanged: (newValue) async {
                                       setState(() => _model
                                           .switchListTileValue2 = newValue!);
@@ -218,7 +219,7 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                         children: [
                           Expanded(
                             child: SwitchListTile.adaptive(
-                              value: _model.switchListTileValue3 ??= true,
+                              value: _model.switchListTileValue3 ??= false,
                               onChanged: (newValue) async {
                                 setState(() =>
                                     _model.switchListTileValue3 = newValue!);

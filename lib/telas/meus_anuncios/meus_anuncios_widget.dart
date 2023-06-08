@@ -156,8 +156,8 @@ class _MeusAnunciosWidgetState extends State<MeusAnunciosWidget> {
                                   .primaryBackground,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              context.pushNamed('fazer_anuncio');
                             },
                           ),
                         ],

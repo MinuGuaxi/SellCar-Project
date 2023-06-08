@@ -13,3 +13,7 @@ export '/telas/notificacoes/notificacoes_widget.dart' show NotificacoesWidget;
 export '/telas/cadastrar/cadastrar_widget.dart' show CadastrarWidget;
 export '/telas/minha_conta/minha_conta_widget.dart' show MinhaContaWidget;
 export '/telas/meus_anuncios/meus_anuncios_widget.dart' show MeusAnunciosWidget;
+export '/telas/tela_home/tela_home_widget.dart' show TelaHomeWidget;
+export '/telas/configuracoes/configuracoes_widget.dart'
+    show ConfiguracoesWidget;
+export '/telas/seguranca/seguranca_widget.dart' show SegurancaWidget;

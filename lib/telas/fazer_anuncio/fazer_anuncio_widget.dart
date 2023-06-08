@@ -1437,8 +1437,8 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed('Tela_home');
                               },
                               text: 'Voltar',
                               options: FFButtonOptions(
@@ -1469,8 +1469,8 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed('Meus_Anuncios');
                               },
                               text: 'Confirmar',
                               options: FFButtonOptions(

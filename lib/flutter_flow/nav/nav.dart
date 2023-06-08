@@ -100,6 +100,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Meus_Anuncios',
           path: '/meusAnuncios',
           builder: (context, params) => MeusAnunciosWidget(),
+        ),
+        FFRoute(
+          name: 'Tela_home',
+          path: '/telaHome',
+          builder: (context, params) => TelaHomeWidget(),
+        ),
+        FFRoute(
+          name: 'Configuracoes',
+          path: '/configuracoes',
+          builder: (context, params) => ConfiguracoesWidget(),
+        ),
+        FFRoute(
+          name: 'Seguranca',
+          path: '/seguranca',
+          builder: (context, params) => SegurancaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

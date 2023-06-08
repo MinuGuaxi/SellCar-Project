@@ -47,9 +47,8 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: WillPopScope(
-        onWillPop: () async => false,
+        onWillPop: () async => true,
         child: Scaffold(
-          key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           appBar: AppBar(
             backgroundColor: Color(0xFFFBFC0C),
@@ -62,7 +61,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                     fontWeight: FontWeight.normal,
                   ),
             ),
-            actions: [],
+
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -70,7 +69,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
             top: true,
             child: SingleChildScrollView(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Flexible(
                     child: Align(
@@ -86,7 +85,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                           ),
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.9,
-                            height: MediaQuery.of(context).size.height * 0.6,
+                            height: MediaQuery.of(context).size.height * 0.7,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -98,14 +97,14 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                               ),
                             ),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.3,
+                                        MediaQuery.of(context).size.width * 0.2,
                                     height: MediaQuery.of(context).size.height *
                                         0.12,
                                     decoration: BoxDecoration(
@@ -113,7 +112,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                           .secondaryBackground,
                                     ),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
@@ -142,14 +141,14 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                             borderColor: Colors.transparent,
                                             borderRadius: 20.0,
                                             borderWidth: 1.0,
-                                            buttonSize: 35.0,
+                                            buttonSize: 30.0,
                                             fillColor: Colors.transparent,
                                             icon: Icon(
                                               Icons.add_photo_alternate,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 24.0,
+                                              size: 20.0,
                                             ),
                                             onPressed: () {
                                               print('IconButton pressed ...');
@@ -162,7 +161,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 8.0, 0.0),
+                                      12.0, 0.0, 8.0, 5.0),
                                   child: TextFormField(
                                     controller: _model.textController1,
                                     autofocus: true,
@@ -250,7 +249,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 0.0, 0.0),
+                                                  10.0, 10.0, 0.0, 0.0),
                                           child: Text(
                                             'Gênero:',
                                             style: FlutterFlowTheme.of(context)
@@ -267,7 +266,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
+                                            0.0, 5.0, 10.0, 0.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller: _model
                                                   .dropDownValueController ??=
@@ -282,8 +281,8 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                              0.32,
-                                          height: 50.0,
+                                              0.38,
+                                          height: 60.0,
                                           searchHintTextStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium,
@@ -526,7 +525,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 180.0, 0.0, 0.0),
+                                      0.0, 90.0, 0.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -540,6 +539,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                           },
                                           text: 'Salvar',
                                           options: FFButtonOptions(
+                                            width: 150,
                                             height: 40.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(

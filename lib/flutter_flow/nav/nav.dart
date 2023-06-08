@@ -34,12 +34,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => ResultadosPesquisaWidget(),
+      errorBuilder: (context, state) => TelaHomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => ResultadosPesquisaWidget(),
+          builder: (context, _) => TelaHomeWidget(),
         ),
         FFRoute(
           name: 'resultados_pesquisa',

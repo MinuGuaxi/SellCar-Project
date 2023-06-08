@@ -1,7 +1,9 @@
-import '../configuracoes/configuracoes_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'tela_home_model.dart';
 export 'tela_home_model.dart';
 
@@ -253,38 +255,20 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
             ),
           ),
           actions: [
-            PopupMenuButton<String>(
-              icon: Icon(Icons.person, color: Colors.black,),
-              onSelected: (value) {
-                // Ação quando um item do popup for selecionado
-                print(value);
+            FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 20.0,
+              borderWidth: 1.0,
+              buttonSize: 40.0,
+              fillColor: Colors.transparent,
+              icon: Icon(
+                Icons.person,
+                color: FlutterFlowTheme.of(context).primaryText,
+                size: 24.0,
+              ),
+              onPressed: () async {
+                Navigator.pop(context);
               },
-              itemBuilder: (context) => [
-                PopupMenuItem(
-                  value: 'Opção 1',
-                  child: ListTile(
-                    leading: Icon(Icons.candlestick_chart_outlined),
-                    title: Text('Preferências'),
-                    onTap: (){
-                      Navigator.of(context).push(PageRouteBuilder(pageBuilder: (_, __, ___) => ConfiguracoesWidget()));
-                    },
-                  ),
-                ),
-                PopupMenuItem(
-                  value: 'Opção 2',
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Trocar de conta'),
-                  ),
-                ),
-                PopupMenuItem(
-                  value: 'Opção 3',
-                  child: ListTile(
-                    leading: Icon(Icons.exit_to_app),
-                    title: Text('Sair'),
-                  ),
-                ),
-              ],
             ),
           ],
           centerTitle: true,
@@ -296,7 +280,6 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                //corpo da pesquisa
                 Container(
                   width: MediaQuery.of(context).size.width * 1.0,
                   height: 100.0,
@@ -310,8 +293,6 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
-
-                          //Container - Pesquisa
                           child: Container(
                             width: 280.0,
                             child: TextFormField(
@@ -364,8 +345,7 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                               validator: _model.textControllerValidator
                                   .asValidator(context),
                             ),
-                          ), //FIM DO CONTAINER PESQUISA
-
+                          ),
                         ),
                       ),
                       Align(
@@ -387,139 +367,7 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                       ),
                     ],
                   ),
-                ), //FIM DO CORPO DA PESQUISA
-
-
-                //CORPO APP
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16.0), // Define a margem horizontal de 16 pixels
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Em oferta',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),//TextStyle
-                    ),//Text
-                  ),//Align
-                ),//Container de Título
-
-                Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                  indent: 20,
-                  endIndent: 20,
                 ),
-
-                Container(
-                  height: 200, // Definindo a altura da ListView
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal, // Definindo a direção horizontal
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        child: Container(
-                          width: 200,
-                          child: ListTile(
-                            title: Text('Título do Card $index'),
-                            subtitle: Text('Subtítulo do Card $index'),
-                          ),
-                        ),//Fim do container do card
-                      );//Fim do card
-                    },//Fim do itemBuilder
-                  ),//Fim do ListViewBuilder
-                ),//Container fim do card Horizontal
-
-                Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                  indent: 20,
-                  endIndent: 20,
-                ),//Fim do Divider do Card Horizontal
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16.0), // Define a margem horizontal de 16 pixels
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Próximo de você:',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),//TextStyle
-                    ),//Text
-                  ),//Align
-                ),//Container de Título
-                Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                  indent: 20,
-                  endIndent: 20,
-                ),//Fim do Divider do titulo
-
-//CONTAINER COM OS CARDS PRINCIPAIS//
-                Container(
-                  width: 500, // Largura desejada
-                  child: ListView.builder(
-                    shrinkWrap: true, // Define o ListView para se ajustar ao espaço disponível
-                    itemCount: 20,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 100,
-                                  height: 50,
-                                  child: Placeholder(), // Substitua o Placeholder pela sua imagem
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Nome do carro'),
-                                        Text('Quilometragem'),
-                                        Text('Cor/Marca'),
-                                        Text('Valor em RS'),
-                                      ],//Children linhas de texto
-                                    ),//Column
-                                  ),//Padding
-                                ),//Expanded
-                              ],//Children
-                            ),//Row com as linhas de texto
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('Anunciante e cidade-estado'),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      // Lógica do botão de favorito
-                                    },
-                                    style: ButtonStyle(
-                                      backgroundColor:  MaterialStateProperty.all<Color>(Colors.black),),
-                                    child: Icon(Icons.favorite),
-                                  ),
-                                ],
-                              ),
-                            ),//Fim do Container do rodapé//
-                          ],//Children
-                        ),//Column
-                      );//Card
-                    },//Item builder
-                  ),//ListViewBuilder
-                ),//Fim do Container da lista de Cards
-
-                //FIM DO CORPO
-
               ],
             ),
           ),

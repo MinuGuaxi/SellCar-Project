@@ -76,7 +76,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -106,7 +106,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                     width:
                                         MediaQuery.of(context).size.width * 0.2,
                                     height: MediaQuery.of(context).size.height *
-                                        0.12,
+                                        0.11,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -121,15 +121,15 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 80.0,
-                                            height: 80.0,
+                                            width: 90.0,
+                                            height: 41.5,
                                             clipBehavior: Clip.antiAlias,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
                                               'https://picsum.photos/seed/767/600',
-                                              fit: BoxFit.cover,
+                                              fit: BoxFit.contain,
                                             ),
                                           ),
                                         ),
@@ -161,7 +161,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 8.0, 5.0),
+                                      12.0, 20.0, 8.0, 5.0),
                                   child: TextFormField(
                                     controller: _model.textController1,
                                     autofocus: true,
@@ -196,7 +196,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: Color(0xFFFBFC0C),
+                                          color: Color(0xFF000000),
                                           width: 2.0,
                                         ),
                                         borderRadius:
@@ -525,7 +525,7 @@ class _MinhaContaWidgetState extends State<MinhaContaWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 90.0, 0.0, 10.0),
+                                      0.0, 10.0, 0.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,

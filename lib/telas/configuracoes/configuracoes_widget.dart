@@ -1,3 +1,5 @@
+import 'package:sellcar/telas/Login.dart';
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -298,10 +300,9 @@ class _ConfiguracoesWidgetState extends State<ConfiguracoesWidget> {
                                                     child: Text('Cancelar'),
                                                   ),
                                                   TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            true),
+                                                    onPressed: () {
+                                                      Navigator.of(context).push(PageRouteBuilder(pageBuilder: (_, __, ___) => LoginScreen()));
+                                                    },
                                                     child: Text('Confirmar'),
                                                   ),
                                                 ],

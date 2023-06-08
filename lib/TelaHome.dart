@@ -77,11 +77,13 @@ class TelaInicio extends StatelessWidget{
         ),//AppBar
         drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 0.0),
             children: <Widget>[
               DrawerHeader(
                 decoration: BoxDecoration(color: Colors.yellow),
+                padding: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 0.0),
                 child: Text('Menu',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 24, color: Colors.black87)
                 ), //text
               ),

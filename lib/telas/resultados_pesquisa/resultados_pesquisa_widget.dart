@@ -738,7 +738,7 @@ class _ResultadosPesquisaWidgetState extends State<ResultadosPesquisaWidget> {
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        100.0, 0.0, 0.0, 0.0),
+                                                        30.0, 0.0, 0.0, 0.0),
                                                 child: FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
@@ -912,7 +912,7 @@ class _ResultadosPesquisaWidgetState extends State<ResultadosPesquisaWidget> {
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      100.0, 0.0, 0.0, 0.0),
+                                                      30.0, 0.0, 0.0, 0.0),
                                               child: FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
                                                 borderRadius: 20.0,
@@ -1110,7 +1110,7 @@ class _ResultadosPesquisaWidgetState extends State<ResultadosPesquisaWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    100.0, 0.0, 0.0, 0.0),
+                                                    30.0, 0.0, 0.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
                                               borderRadius: 30.0,
@@ -1270,7 +1270,7 @@ class _ResultadosPesquisaWidgetState extends State<ResultadosPesquisaWidget> {
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      100.0, 0.0, 0.0, 0.0),
+                                                      30.0, 0.0, 0.0, 0.0),
                                               child: FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
                                                 borderRadius: 35.0,

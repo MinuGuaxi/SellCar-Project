@@ -99,7 +99,7 @@ class _FavoritosWidgetState extends State<FavoritosWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                55.0, 2.0, 15.0, 2.0),
+                                20.0, 2.0, 15.0, 0.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController ??=
                                   FormFieldController<String>(
@@ -109,7 +109,7 @@ class _FavoritosWidgetState extends State<FavoritosWidget> {
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue = val),
                               width: 100.0,
-                              height: 50.0,
+                              height: 45.0,
                               searchHintTextStyle:
                                   FlutterFlowTheme.of(context).labelMedium,
                               textStyle: FlutterFlowTheme.of(context)

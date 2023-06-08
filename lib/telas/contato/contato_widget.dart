@@ -142,7 +142,7 @@ class _ContatoWidgetState extends State<ContatoWidget> {
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: Color(0xFFFBFC0C),
+                                          color: Color(0xFF252520),
                                           width: 2.0,
                                         ),
                                         borderRadius:
@@ -225,14 +225,14 @@ class _ContatoWidgetState extends State<ContatoWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            30.0, 30.0, 30.0, 30.0),
+                            4.0, 10.0, 10.0, 10.0),
                         child: FlutterFlowIconButton(
                           borderColor:
                               FlutterFlowTheme.of(context).secondaryText,
                           borderRadius: 20.0,
                           borderWidth: 3.0,
                           buttonSize: 40.0,
-                          fillColor: Color(0xFFFBFC0C),
+                          fillColor: Color(0xFFDCC92E),
                           icon: Icon(
                             Icons.send,
                             color: FlutterFlowTheme.of(context).primaryText,
@@ -274,8 +274,8 @@ class _ContatoWidgetState extends State<ContatoWidget> {
                           ),
                         ),
                         Container(
-                          width: 300.0,
-                          height: 110.0,
+                          width: 270.0,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,

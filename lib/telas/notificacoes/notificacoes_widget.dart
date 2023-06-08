@@ -68,7 +68,7 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.9,
-                    height: MediaQuery.of(context).size.height * 0.18,
+                    height: MediaQuery.of(context).size.height * 0.300,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.circular(7.0),
@@ -80,7 +80,7 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                     child: Stack(
                       children: [
                         Column(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -140,7 +140,7 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                               ],
                             ),
                             Row(
-                              mainAxisSize: MainAxisSize.max,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Expanded(
                                   child: SwitchListTile.adaptive(
@@ -192,7 +192,7 @@ class _NotificacoesWidgetState extends State<NotificacoesWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.9,
-                  height: MediaQuery.of(context).size.height * 0.17,
+                  height: MediaQuery.of(context).size.height * 0.30,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(7.0),

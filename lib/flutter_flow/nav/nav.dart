@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import '../../telas/Login.dart';
 import '../flutter_flow_theme.dart';
 
 import '../../index.dart';
@@ -34,12 +35,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => TelaHomeWidget(),
+      errorBuilder: (context, state) => LoginScreen(),
       routes: [
+        FFRoute(name: '_initialize', path: '/', builder: (context, _) => LoginScreen(),
+        ),
         FFRoute(
-          name: '_initialize',
-          path: '/',
-          builder: (context, _) => TelaHomeWidget(),
+          name: 'tela_home',
+          path: '/telahome',
+          builder: (context, params) => TelaHomeWidget(),
         ),
         FFRoute(
           name: 'resultados_pesquisa',
@@ -101,11 +104,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/meusAnuncios',
           builder: (context, params) => MeusAnunciosWidget(),
         ),
-        FFRoute(
-          name: 'Tela_home',
-          path: '/telaHome',
-          builder: (context, params) => TelaHomeWidget(),
-        ),
+
         FFRoute(
           name: 'Configuracoes',
           path: '/configuracoes',

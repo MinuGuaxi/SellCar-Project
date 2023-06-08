@@ -5,8 +5,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../Login.dart';
 import 'tela_home_model.dart';
 export 'tela_home_model.dart';
+
 
 class TelaHomeWidget extends StatefulWidget {
   const TelaHomeWidget({Key? key}) : super(key: key);
@@ -59,9 +61,9 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                     color: Color(0xFFF0E832),
                   ),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         'Menu',

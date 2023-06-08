@@ -77,22 +77,9 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    icon: Icon(Icons.facebook),
-                    onPressed: () {
-                    },
-
-                  ),
                   SizedBox(width: 16.0),
                   IconButton(
                     icon: Icon(MdiIcons.google ),
-                    onPressed: () {
-                      // Ação quando o botão "Google" for pressionado
-                    },
-                  ),
-                  SizedBox(width: 16.0),
-                  IconButton(
-                    icon: Icon(MdiIcons.twitter ),
                     onPressed: () {
                       // Ação quando o botão "Google" for pressionado
                     },

@@ -1,3 +1,4 @@
+import '../../services/auth_service.dart';
 import '../configuracoes/configuracoes_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -287,6 +288,10 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                   child: ListTile(
                     leading: Icon(Icons.exit_to_app),
                     title: Text('Sair'),
+                    onTap: (){
+                      Navigator.pop(context);
+                      AuthService.to.logout();
+                    },
                   ),
                 ),
               ],

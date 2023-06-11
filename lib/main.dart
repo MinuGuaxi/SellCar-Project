@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:sellcar/firebase_options.dart';
+import 'config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
@@ -12,10 +13,9 @@ import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  initConfigurations();
   usePathUrlStrategy();
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FlutterFlowTheme.initialize();
 
   runApp(MyApp());
@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       locale: _locale,
-      supportedLocales: const [Locale('en', '')],
+      supportedLocales: const [Locale('pt', 'BR')],
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,

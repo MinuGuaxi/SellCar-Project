@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:sellcar/widgets/checkauth.dart';
 import '../../telas/Login.dart';
 import '../flutter_flow_theme.dart';
 
@@ -35,10 +36,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => LoginScreen(),
+      errorBuilder: (context, state) => CheckAuth(),
       routes: [
-        FFRoute(name: '_initialize', path: '/', builder: (context, _) => LoginScreen(),
+        FFRoute(name: '_initialize', path: '/', builder: (context, _) => CheckAuth(),
         ),
+
         FFRoute(
           name: 'tela_home',
           path: '/telahome',

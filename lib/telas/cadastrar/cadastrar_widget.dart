@@ -72,14 +72,14 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
             top: true,
             child: SingleChildScrollView(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Flexible(
                     child: Align(
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 2.0,
@@ -88,7 +88,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                           ),
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.9,
-                            height: MediaQuery.of(context).size.height * 0.6,
+                            height: MediaQuery.of(context).size.height * 0.78,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -100,7 +100,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                               ),
                             ),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -109,13 +109,13 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                     width:
                                         MediaQuery.of(context).size.width * 0.3,
                                     height: MediaQuery.of(context).size.height *
-                                        0.12,
+                                        0.17,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                     ),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
@@ -124,8 +124,8 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 80.0,
-                                            height: 80.0,
+                                            width: 70.0,
+                                            height: 70.0,
                                             clipBehavior: Clip.antiAlias,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
@@ -198,7 +198,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: Color(0xFFFBFC0C),
+                                          color: Color(0xFF000000),
                                           width: 2.0,
                                         ),
                                         borderRadius:
@@ -239,7 +239,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                         .secondaryBackground,
                                   ),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
@@ -268,7 +268,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
+                                            0.0, 10.0, 10.0, 0.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller: _model
                                                   .dropDownValueController ??=
@@ -283,8 +283,8 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                              0.32,
-                                          height: 50.0,
+                                              0.35,
+                                          height: 100.0,
                                           searchHintTextStyle:
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium,
@@ -460,7 +460,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 8.0, 0.0),
+                                      12.0, 0.0, 0.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController4,
                                     autofocus: true,
@@ -527,7 +527,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 180.0, 0.0, 0.0),
+                                      0.0, 90.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:

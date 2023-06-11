@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "826461921789-b9mg1d9b4oiq6sgq91f59crii542138s.apps.googleusercontent.com",
+          "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -28,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "826461921789-b9mg1d9b4oiq6sgq91f59crii542138s.apps.googleusercontent.com",
+              "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -44,7 +44,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "826461921789-b9mg1d9b4oiq6sgq91f59crii542138s.apps.googleusercontent.com",
+          "client_id": "826461921789-la4952nhe0fr4luvrs5kfq139lmvgdgi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sellcar.sellcar",
+            "certificate_hash": "aaa7687866549211882d2485fe7f856c0956ac30"
+          }
+        },
+        {
+          "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -57,7 +65,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "826461921789-b9mg1d9b4oiq6sgq91f59crii542138s.apps.googleusercontent.com",
+              "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -73,7 +81,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "826461921789-b9mg1d9b4oiq6sgq91f59crii542138s.apps.googleusercontent.com",
+          "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -86,7 +94,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "826461921789-b9mg1d9b4oiq6sgq91f59crii542138s.apps.googleusercontent.com",
+              "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

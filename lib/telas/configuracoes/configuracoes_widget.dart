@@ -1,13 +1,12 @@
-import 'package:sellcar/telas/Login.dart';
-
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'configuracoes_model.dart';
 export 'configuracoes_model.dart';
+import 'package:sellcar/controllers/autenticacao_controller.dart';
 
 class ConfiguracoesWidget extends StatefulWidget {
   const ConfiguracoesWidget({Key? key}) : super(key: key);
@@ -18,9 +17,11 @@ class ConfiguracoesWidget extends StatefulWidget {
 
 class _ConfiguracoesWidgetState extends State<ConfiguracoesWidget> {
   late ConfiguracoesModel _model;
+  final controller = Get.find<AutenticacaoController>();
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
+
 
   @override
   void initState() {
@@ -300,8 +301,7 @@ class _ConfiguracoesWidgetState extends State<ConfiguracoesWidget> {
                                                     child: Text('Cancelar'),
                                                   ),
                                                   TextButton(
-                                                    onPressed: () {
-                                                      Navigator.of(context).push(PageRouteBuilder(pageBuilder: (_, __, ___) => LoginScreen()));
+                                                    onPressed: (){
                                                     },
                                                     child: Text('Confirmar'),
                                                   ),

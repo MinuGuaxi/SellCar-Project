@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import 'package:get/get.dart';
 
+
 class AutenticacaoController extends GetxController {
   final email = TextEditingController();
   final senha = TextEditingController();
   final formKey = GlobalKey<FormState>();
-
   var titulo = 'Bem vindo!'.obs;
   var botaoPrincipal = 'Entrar'.obs;
   var appBarButton = 'Cadastre-se'.obs;
@@ -40,3 +40,4 @@ class AutenticacaoController extends GetxController {
     isLogin.value = !isLogin.value;
   }
 }
+

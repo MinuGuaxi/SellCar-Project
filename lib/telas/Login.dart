@@ -5,6 +5,8 @@ import 'package:sellcar/services/auth_service.dart';
 import '../controllers/autenticacao_controller.dart';
 import 'cadastrar/cadastrar_widget.dart';
 import 'esqueci_minha_senha/esqueci_minha_senha_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 void main() {
   runApp(LoginScreen());
@@ -134,12 +136,13 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 16.0),
+              SizedBox(height: 8.0),
 
               Center(
                 child: IconButton(
+                  padding: EdgeInsets.only(top: 10),
                   icon: Icon(MdiIcons.google),
-                  onPressed: (){},
+                  onPressed: signInWithGoogle,
                 ),
               ),
 

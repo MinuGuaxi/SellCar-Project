@@ -9,6 +9,8 @@ import 'package:provider/provider.dart';
 import '../Login.dart';
 import 'tela_home_model.dart';
 export 'tela_home_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:sellcar/database/db_configs.dart';
 
 
 class TelaHomeWidget extends StatefulWidget {
@@ -398,7 +400,7 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
 
                //INICIO CORPO_APP
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16.0), // Define a margem horizontal de 16 pixels
+                  margin: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -419,30 +421,41 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                 ),
 
                 Container(
-                  height: 200, // Definindo a altura da ListView
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal, // Definindo a direção horizontal
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        child: Container(
-                          width: 200,
-                          child: ListTile(
-                            title: Text('Título do Card $index'),
-                            subtitle: Text('Subtítulo do Card $index'),
-                          ),
-                        ),//Fim do container do card
-                      );//Fim do card
-                    },//Fim do itemBuilder
-                  ),//Fim do ListViewBuilder
-                ),//Container fim do card Horizontal
+                  height: 200,
+                  child: StreamBuilder<QuerySnapshot>(
+                    stream: FirebaseFirestore.instance.collection('carros').snapshots(),
+                    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (snapshot.hasError) {
+                        return Text('Ocorreu um erro ao carregar os carros.');
+                      }
 
-                Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                  indent: 20,
-                  endIndent: 20,
-                ),//Fim do Divider do Card Horizontal
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return CircularProgressIndicator();
+                      }
+
+                      final carros = snapshot.data!.docs;
+
+                      return ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: carros.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          final carro = carros[index].data() as Map<String, dynamic>;
+
+                          return Card(
+                            child: Container(
+                              width: 200,
+                              child: ListTile(
+                                title: Text(carro['marca'] + ' ' + carro['modelo']),
+                                subtitle: Text('Ano: ${carro['ano']}'),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+    //Fim do Divider do Card Horizontal
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 16.0), // Define a margem horizontal de 16 pixels
                   child: Align(
@@ -464,71 +477,104 @@ class _TelaHomeWidgetState extends State<TelaHomeWidget> {
                 ),//Fim do Divider do titulo
 
 //CONTAINER COM OS CARDS PRINCIPAIS//
-                Container(
-                  width: 500, // Largura desejada
-                  child: ListView.builder(
-                    shrinkWrap: true, // Define o ListView para se ajustar ao espaço disponível
-                    itemCount: 20,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 100,
-                                  height: 50,
-                                  child: Placeholder(), // Substitua o Placeholder pela sua imagem
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(10),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Nome do carro'),
-                                        Text('Quilometragem'),
-                                        Text('Cor/Marca'),
-                                        Text('Valor em RS'),
-                                      ],//Children linhas de texto
-                                    ),//Column
-                                  ),//Padding
-                                ),//Expanded
-                              ],//Children
-                            ),//Row com as linhas de texto
                             Container(
-                              padding: EdgeInsets.all(10),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('Anunciante e cidade-estado'),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      // Lógica do botão de favorito
-                                    },
-                                    style: ButtonStyle(
-                                      backgroundColor:  MaterialStateProperty.all<Color>(Colors.black),),
-                                    child: Icon(Icons.favorite),
-                                  ),
-                                ],
-                              ),
-                            ),//Fim do Container do rodapé//
-                          ],//Children
-                        ),//Column
-                      );//Card
-                    },//Item builder
-                  ),//ListViewBuilder
-                ),//Fim do Container da lista de Cards
-               //FIM DO CORPO_APP
-              ],
-            ),
+                            width: 500,
+                              child: StreamBuilder<QuerySnapshot>(
+                              stream: FirebaseFirestore.instance.collection('carros').snapshots(),
+                              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                                if (snapshot.hasError) {
+                                  return Text(
+                                      'Ocorreu um erro ao carregar os carros.');
+                                }
+
+                                if (snapshot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return CircularProgressIndicator();
+                                }
+
+                                final carros = snapshot.data!.docs;
+
+                                return ListView.builder(
+                                  shrinkWrap: true,
+                                  itemCount: carros.length,
+                                  itemBuilder: (BuildContext context,
+                                      int index) {
+                                    final carro = carros[index].data() as Map<
+                                        String,
+                                        dynamic>;
+
+                                    return Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            10.0),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            crossAxisAlignment: CrossAxisAlignment
+                                                .start,
+                                            children: [
+                                              Container(
+                                                width: 100,
+                                                height: 50,
+                                                child: Image.network(
+                                                    carro['fotoUrl']), // Substitua o Placeholder pela sua imagem do carro
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(10),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment
+                                                        .start,
+                                                    children: [
+                                                      Text(
+                                                          carro['marca'] + ' ' +
+                                                              carro['modelo']),
+                                                      Text('Quilometragem'),
+                                                      Text('Cor/Marca'),
+                                                      Text('Valor em RS'),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.all(10),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment
+                                                  .spaceBetween,
+                                              children: [
+                                                Text(
+                                                    'Anunciante e cidade-estado'),
+                                                ElevatedButton(
+                                                  onPressed: () {
+                                                    // Lógica do botão de favorito
+                                                  },
+                                                  style: ButtonStyle(
+                                                    backgroundColor: MaterialStateProperty
+                                                        .all<Color>(
+                                                        Colors.black),),
+                                                  child: Icon(Icons.favorite),
+                                                ),
+                                              ],
+                                            ),
+                                          ), //Fim do Container do rodapé//
+                                        ], //Children
+                                      ), //Column
+                                    ); //Card
+                                  }, //Item builder
+                                );
+                              },//ListViewBuilder
+                            ),//Fim do Container da lista de Cards
+
+    //FIM DO CORPO_APP
+
+                            ),
+            ],
           ),
         ),
       ),
-    );
+    ));
   }
 }

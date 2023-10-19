@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "826461921789",
+    "firebase_url": "https://flutterproject-6bd0c-default-rtdb.firebaseio.com",
+    "project_id": "flutterproject-6bd0c",
+    "storage_bucket": "flutterproject-6bd0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826461921789:android:ad0a150a8b1582b266f994",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmfDQeMka8UVGRTWZ2OnCwzWw7fe9zuos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826461921789:android:796dcfff8e1ad7ba66f994",
+        "android_client_info": {
+          "package_name": "com.example.sellcar.sellcar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826461921789-la4952nhe0fr4luvrs5kfq139lmvgdgi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sellcar.sellcar",
+            "certificate_hash": "aaa7687866549211882d2485fe7f856c0956ac30"
+          }
+        },
+        {
+          "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmfDQeMka8UVGRTWZ2OnCwzWw7fe9zuos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826461921789:android:2a8bda5df413fd6966f994",
+        "android_client_info": {
+          "package_name": "com.google.firebase.presents.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmfDQeMka8UVGRTWZ2OnCwzWw7fe9zuos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826461921789-39jlsrl2maq7jdjcl0clqr56798harqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

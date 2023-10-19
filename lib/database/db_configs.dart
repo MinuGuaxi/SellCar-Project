@@ -2,13 +2,25 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:io';
 
-Future<void> adicionarCarro(String marca, String modelo, int ano, String imagePath) async {
+Future<void> adicionarCarro(
+    String marca,
+    String modelo,
+    String ano,
+    String imagePath,
+    String km,
+    String valor,
+    String cor,
+    String tipo,
+    String ce) async {
   final storage = FirebaseStorage.instance;
   final firestore = FirebaseFirestore.instance;
   final carrosCollection = firestore.collection('carros');
 
   // Fazendo o upload da foto
-  final fotoRef = storage.ref().child('carros').child(DateTime.now().millisecondsSinceEpoch.toString());
+  final fotoRef = storage
+      .ref()
+      .child('carros')
+      .child(DateTime.now().millisecondsSinceEpoch.toString());
   final fotoTask = fotoRef.putFile(File(imagePath));
 
   // Obtendo a URL da foto armazenada
@@ -21,6 +33,11 @@ Future<void> adicionarCarro(String marca, String modelo, int ano, String imagePa
     'modelo': modelo,
     'ano': ano,
     'fotoUrl': fotoUrl,
+    'km': km,
+    'valor': valor,
+    'cor': cor,
+    'tipo': tipo,
+    'ce': ce,
     // ... outras informações sobre o carro ...
   });
 }

@@ -11,9 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 class FazerAnuncioModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
+  String? marcaSelecionada;
 
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController1;

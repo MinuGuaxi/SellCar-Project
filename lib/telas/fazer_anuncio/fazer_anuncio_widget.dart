@@ -1,3 +1,8 @@
+import 'dart:io';
+
+import 'package:image_picker/image_picker.dart';
+
+import '../../database/db_configs.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -23,7 +28,7 @@ class FazerAnuncioWidget extends StatefulWidget {
 
 class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
   late FazerAnuncioModel _model;
-
+  XFile? selectedImage;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
   int get pageViewCurrentIndex => _model.pageViewController != null &&
@@ -55,6 +60,7 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
     super.dispose();
   }
 
+  @override
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -119,10 +125,19 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                   children: [
                                     FlutterFlowRadioButton(
                                       options: ['Sedan'].toList(),
-                                      onChanged: (val) => setState(() {}),
-                                      controller:
-                                          _model.radioButtonValueController1 ??=
-                                              FormFieldController<String>(null),
+                                      onChanged: (val) => setState(() {
+                                        _model.radioButtonValueController1
+                                            ?.value = val;
+                                        // Use para acessar o valor selecionado.
+                                        String categoriaSelecionada = _model
+                                                .radioButtonValueController1
+                                                ?.value ??
+                                            '';
+                                        // Agora você pode usar "categoriaSelecionada" para enviar os dados para o Firebase ou realizar qualquer ação necessária.
+                                      }),
+                                      controller: _model
+                                              .radioButtonValueController1 ??=
+                                          FormFieldController<String>('Sedan'),
                                       optionHeight: 32.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium,
@@ -145,10 +160,18 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                     ),
                                     FlutterFlowRadioButton(
                                       options: ['Pick-up'].toList(),
-                                      onChanged: (val) => setState(() {}),
+                                      onChanged: (val) => setState(() {
+                                        _model.radioButtonValueController2
+                                            ?.value = val;
+                                        String categoriaSelecionada = _model
+                                                .radioButtonValueController2
+                                                ?.value ??
+                                            '';
+                                      }),
                                       controller:
                                           _model.radioButtonValueController2 ??=
-                                              FormFieldController<String>(null),
+                                              FormFieldController<String>(
+                                                  'Pick-up'),
                                       optionHeight: 32.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium,
@@ -179,10 +202,17 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                   children: [
                                     FlutterFlowRadioButton(
                                       options: ['Hatch'].toList(),
-                                      onChanged: (val) => setState(() {}),
-                                      controller:
-                                          _model.radioButtonValueController3 ??=
-                                              FormFieldController<String>(null),
+                                      onChanged: (val) => setState(() {
+                                        _model.radioButtonValueController3
+                                            ?.value = val;
+                                        String categoriaSelecionada = _model
+                                                .radioButtonValueController3
+                                                ?.value ??
+                                            '';
+                                      }),
+                                      controller: _model
+                                              .radioButtonValueController3 ??=
+                                          FormFieldController<String>('Hatch'),
                                       optionHeight: 32.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium,
@@ -205,10 +235,17 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                     ),
                                     FlutterFlowRadioButton(
                                       options: ['Suv'].toList(),
-                                      onChanged: (val) => setState(() {}),
-                                      controller:
-                                          _model.radioButtonValueController4 ??=
-                                              FormFieldController<String>(null),
+                                      onChanged: (val) => setState(() {
+                                        _model.radioButtonValueController4
+                                            ?.value = val;
+                                        String categoriaSelecionada = _model
+                                                .radioButtonValueController4
+                                                ?.value ??
+                                            '';
+                                      }),
+                                      controller: _model
+                                              .radioButtonValueController4 ??=
+                                          FormFieldController<String>('Suv'),
                                       optionHeight: 32.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium,
@@ -239,10 +276,17 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                   children: [
                                     FlutterFlowRadioButton(
                                       options: ['Buggy'].toList(),
-                                      onChanged: (val) => setState(() {}),
-                                      controller:
-                                          _model.radioButtonValueController5 ??=
-                                              FormFieldController<String>(null),
+                                      onChanged: (val) => setState(() {
+                                        _model.radioButtonValueController5
+                                            ?.value = val;
+                                        String categoriaSelecionada = _model
+                                                .radioButtonValueController5
+                                                ?.value ??
+                                            '';
+                                      }),
+                                      controller: _model
+                                              .radioButtonValueController5 ??=
+                                          FormFieldController<String>('Buggy'),
                                       optionHeight: 32.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium,
@@ -265,10 +309,18 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                     ),
                                     FlutterFlowRadioButton(
                                       options: ['Conversível'].toList(),
-                                      onChanged: (val) => setState(() {}),
+                                      onChanged: (val) => setState(() {
+                                        _model.radioButtonValueController6
+                                            ?.value = val;
+                                        String categoriaSelecionada = _model
+                                                .radioButtonValueController6
+                                                ?.value ??
+                                            '';
+                                      }),
                                       controller:
                                           _model.radioButtonValueController6 ??=
-                                              FormFieldController<String>(null),
+                                              FormFieldController<String>(
+                                                  'Conversivel'),
                                       optionHeight: 32.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium,
@@ -442,6 +494,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                           validator: _model
                                               .textController1Validator
                                               .asValidator(context),
+                                          onChanged: (value) {
+                                            _model.textController1.text = value;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -506,6 +561,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                           validator: _model
                                               .textController2Validator
                                               .asValidator(context),
+                                          onChanged: (value) {
+                                            _model.textController2.text = value;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -564,6 +622,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                           validator: _model
                                               .textController3Validator
                                               .asValidator(context),
+                                          onChanged: (value) {
+                                            _model.textController3.text = value;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -682,6 +743,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                         validator: _model
                                             .textController4Validator
                                             .asValidator(context),
+                                        onChanged: (value) {
+                                          _model.textController4.text = value;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -716,9 +780,23 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                                       .primaryText,
                                                   size: 24.0,
                                                 ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
+                                                onPressed: () async {
+                                                  final ImagePicker _picker =
+                                                      ImagePicker();
+                                                  selectedImage =
+                                                      await _picker.pickImage(
+                                                          source: ImageSource
+                                                              .gallery);
+
+                                                  if (selectedImage != null) {
+                                                    // Você agora tem a imagem armazenada na variável selectedImage para uso posterior.
+                                                    print(
+                                                        'Imagem selecionada: ${selectedImage!.path}');
+                                                  } else {
+                                                    // O usuário cancelou a seleção de imagem.
+                                                    print(
+                                                        'Seleção de imagem cancelada.');
+                                                  }
                                                 },
                                               ),
                                             ),
@@ -740,39 +818,32 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                                     scrollDirection:
                                                         Axis.horizontal,
                                                     children: [
-                                                      ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          'https://picsum.photos/seed/411/600',
-                                                          width: 300.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.cover,
+                                                      if (selectedImage != null)
+                                                        ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                            child: Image.file(
+                                                              File(selectedImage!
+                                                                  .path), // Convertendo XFile para File
+                                                              width: 300.0,
+                                                              height: 200.0,
+                                                              fit: BoxFit.cover,
+                                                            ))
+                                                      else
+                                                        ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          child: Image.network(
+                                                            'https://picsum.photos/seed/411/600',
+                                                            width: 300.0,
+                                                            height: 200.0,
+                                                            fit: BoxFit.cover,
+                                                          ),
                                                         ),
-                                                      ),
-                                                      ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          'https://picsum.photos/seed/225/600',
-                                                          width: 300.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                      ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          'https://picsum.photos/seed/488/600',
-                                                          width: 300.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
                                                     ],
                                                   ),
                                                 ),
@@ -1157,6 +1228,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                         validator: _model
                                             .textController5Validator
                                             .asValidator(context),
+                                        onChanged: (value) {
+                                          _model.textController5.text = value;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -1232,6 +1306,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                         validator: _model
                                             .textController6Validator
                                             .asValidator(context),
+                                        onChanged: (value) {
+                                          _model.textController6.text = value;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -1325,6 +1402,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                       keyboardType: TextInputType.number,
                                       validator: _model.textController7Validator
                                           .asValidator(context),
+                                      onChanged: (value) {
+                                        _model.textController7.text = value;
+                                      },
                                     ),
                                   ),
                                 ),
@@ -1405,6 +1485,9 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                           ),
                                       validator: _model.textController8Validator
                                           .asValidator(context),
+                                      onChanged: (value) {
+                                        _model.textController8.text = value;
+                                      },
                                     ),
                                   ),
                                 ),
@@ -1470,7 +1553,37 @@ class _FazerAnuncioWidgetState extends State<FazerAnuncioWidget> {
                                 0.0, 0.0, 10.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('Meus_Anuncios');
+                                // Coletar os dados do modelo ou da página
+                                String? marca = _model
+                                    .dropDownValue1; // Substitua com a variável apropriada
+                                String modelo = _model.textController2.text;
+                                String ano = _model.textController4.text;
+                                String imagePath = selectedImage!.path;
+                                String km = _model.textController1.text;
+                                String valor = _model.textController8.text;
+                                String? cor = _model.dropDownValue2;
+                                String tipo =
+                                    _model.radioButtonValueController4!.value!;
+                                String ce = _model.textController7.text;
+
+                                try {
+                                  await adicionarCarro(
+                                    marca!,
+                                    modelo,
+                                    ano,
+                                    imagePath,
+                                    km,
+                                    valor,
+                                    cor!,
+                                    tipo,
+                                    ce,
+                                  );
+                                  // Os dados foram enviados com sucesso, você pode fazer algo aqui, como navegar para outra página.
+                                  context.pushNamed('Meus_Anuncios');
+                                } catch (e) {
+                                  // Lidar com erros, como exibir uma mensagem de erro.
+                                  print('Erro ao adicionar carro: $e');
+                                }
                               },
                               text: 'Confirmar',
                               options: FFButtonOptions(

@@ -13,9 +13,8 @@ import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 Future<void> main() async {
-  initConfigurations();
   usePathUrlStrategy();
-
+  await initConfigurations();
   await FlutterFlowTheme.initialize();
 
   runApp(MyApp());
